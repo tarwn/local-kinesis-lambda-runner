@@ -1,4 +1,4 @@
 node_modules
-lib
+# lib    - do not ignore lib on this branch - explicit so it flows through to npmignore
 yarn-error.log
 npm-debug.log
