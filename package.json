@@ -6,7 +6,8 @@
   "scripts": {
     "build": "babel src -d lib",
     "lint": "eslint src",
-    "test": "NODE_ENV=test mocha -r src/__tests__/testGlobals.js 'src/**/__tests__/*.js'"
+    "test": "NODE_ENV=test mocha -r src/__tests__/testGlobals.js 'src/**/__tests__/*.js'",
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",

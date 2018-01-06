@@ -2,17 +2,17 @@ const AWS = require('aws-sdk');
 const pollKinesis = require('./pollKinesis');
 
 
-module.exports = function (lambda, options) {
-  options = options || {};
-  const kinesis = options.kinesis || kinesis = new AWS.Kinesis({
+module.exports = function runner(lambda, runOptions) {
+  const options = runOptions || {};
+  const kinesis = options.kinesis || new AWS.Kinesis({
     endpoint: process.env.KINESIS_ENDPOINT,
     region: 'ap-southeast-2',
     accessKeyId: 'FAKE',
     secretAccessKey: 'ALSO FAKE',
   });
   const streamName = options.streamName || process.env.STREAM_NAME;
-  const console = options.console || console;
-  
-  var run = pollKinesis(kinesis, streamName, console)
+  const log = options.console || console;
+
+  const run = pollKinesis(kinesis, streamName, log);
   return run(lambda);
-}
+};
