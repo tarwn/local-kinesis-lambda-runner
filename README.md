@@ -13,17 +13,11 @@ detected.
 
 Also if someone can come up with a better name, please do.
 
-## Usage
-
-First install the package as a development dependency:
-```sh
-npm install --save-dev https://github.com/tarwn/local-kinesis-lambda-runner.git
-```
 ## Usage with Environment Variables (Original)
 
 First install the package as a development dependency:
 ```sh
-npm install --save-dev https://github.com/tarwn/local-kinesis-lambda-runner.git
+npm install --save-dev https://github.com/tarwn/local-kinesis-lambda-runner.git#package
 ```
 
 ### Sample "localDev.js"

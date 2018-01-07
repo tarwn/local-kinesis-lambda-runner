@@ -45,7 +45,7 @@ module.exports = (kinesis, StreamName, logger) => {
         })
         .then(pollKinesis(lambda))
         .catch((err) => {
-          logger.error(err.message);
+          logger.error(err);
           logger.log('Restarting...');
           setTimeout(loop, 2000);
         })
