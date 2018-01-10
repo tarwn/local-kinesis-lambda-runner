@@ -2,7 +2,7 @@ module.exports = (kinesis, StreamName, logger) => {
   const wait = ms => () => new Promise(resolve => setTimeout(resolve, ms));
 
   const callback = (err, result) => (
-    err ? logger.error(`Handler failed: ${err.message}`) : logger.log(`Handler suceeded: ${result}`)
+    err ? logger.error(err) : logger.log(`Handler succeeded: ${result}`)
   );
 
   const mapKinesisRecord = record => ({
